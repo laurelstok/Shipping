@@ -14,17 +14,81 @@
        <h3>Please enter all relevant information</h3>
     </header>
         <main>
-            <form>
+            <form id="complete-form">
                 <div>
                     <p>
-                        Full Name: <span>
+                        <span>
+                        Requestor Full Name: 
                     <input type="text" placeholder="First Name" label= "First Name" id="inputFirstName"/>
                     <input type="text" placeholder="Last Name" label="Last Name" id="inputLastName"/>
                      </p>
-                </span>
+                     <p>
+                        Preffered Shipment Date:
+                        <input type="date" id="ship-date">
+                     </p>
+                        </span>
+                        Project Reference:
+                    <input type="text" placeholder="Refer to Creyon Project" id="project-reference">
+                        Collaborator email:
+                        <input type="email" placeholder="a.greene@creyonbio.com" id="coll-email">
+                        <p>
+                       <label for="shipment-origin">Shipment Origin:</label>
+                       <select name="shipment-origin" id="shipment-origin">
+                        <option value="Carlsbad">Carlsbad</option>
+                        <option value="North Carolina">North Carolina</option>
+                        <option value="India">India</option>
+                       </select>
+                        </p>
+                        <p>
+                            <label for="shipment-destination">Shipment Destination:</label>
+                            <select name="shipment-destination" id="shipment-destination">
+                             <option value="Carlsbad">Carlsbad</option>
+                             <option value="North Carolina">North Carolina</option>
+                             <option value="India">India</option>
+                            </select>
+                         </p>
+                         <p>
+                            <label for="shipping-temp">Shipping Temperature:</label>
+                            <select name="shipping-temp" id="shipping-temp">
+                                <option value="Ambient">Ambient</option>
+                                <option value="2-8°C">2-8°C</option>
+                                <option value="Dry Ice">Dry Ice</option>
+                            </select>
+                            Is Temperature Monitoring Required during shipment?
+                            Yes <input type="checkbox"> No <input type="checkbox">
+                         </p>
+                         <p>
+                            Hazardous Materials:
+                            Does this shipment contain any Hazardous Materials?
+                            Yes <input type="checkbox" id="yes-checkbox"> No <input type="checkbox" id="no-checkbox">
+                         </p>
+                         <div id="item-input">
+                            <table id="itemTable">
+                                <tr>
+                                    <th>Item #</th>
+                                    <th>Item Description</th>
+                                    <th>Qty</th>
+                                    <th>Weight(mg)</th>
+                                    <th>Price/Item($)</th>
+                                    <th>Total Price($)</th>
+                                    <th>Origin</th>
+                                 </tr>
+                                 <tr>
+                                    <td>1</td>
+                                    <td><input type="text" id="item-description"></td>
+                                    <td><input type="number" id="item-qty"></td>
+                                    <td><input type="number" id="item-weight"></td>
+                                    <td><input type="number" id="item-price"></td>
+                                    <td><input type="number" id="total-price"></td>
+                                    <td><input type="text" id="item-origin"></td>
+                                    <td><input type="button" id="deleteButton" value="Delete" onclick="deleteRow(this)"></td>
+                                    <td><input type="button" id="addmoreButton" value="Add More Items" onclick="insRow()"></td>
+                                 </tr>
+                            </table>
+                         </div>
+                            
                 </div>
-                <input type="text" placeholder="First Item" required label="Item"/>
-                <input type="submit" value="Add"/>
+              
             </form>
         </main>
 
